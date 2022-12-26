@@ -1,0 +1,14 @@
+<html>
+<head>
+<title>{{ instanceid.stdout }}</title>
+</head>
+<body>
+<h1>Hands-on-Lab: Nginx nodes</h1>
+#Create by Template at {{ ansible_date_time.iso8601 }}
+
+{% for host in groups['all'] %}
+HOST {{ hostvars[host]['ansible_facts']['hostname'] }} IPADDR : {{ hostvars[host]['ansible_facts']['default_ipv4']['address'] }}
+{% endfor %}
+
+</body>
+</html>

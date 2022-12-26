@@ -1,0 +1,13 @@
+---
+- name: install epel-release for amzl 2
+  ansible.builtin.command: "amazon-linux-extras install epel"
+
+- name: install nginx
+  ansible.builtin.package:
+    name: nginx
+    state: latest
+
+- name: start service
+  ansible.builtin.systemd:
+    name: nginx
+    enabled: yes

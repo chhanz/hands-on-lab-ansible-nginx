@@ -1,0 +1,17 @@
+---
+- name: get instance-id
+  ansible.builtin.command: "curl http://169.254.169.254/latest/meta-data/instance-id"
+  register: instanceid
+
+- name: deploy index
+  ansible.builtin.template:
+    src: index.html.j2
+    dest: /usr/share/nginx/html/index.html
+    owner: root
+    group: root
+    backup: yes
+
+- name: Reboot instance
+  ansible.builtin.reboot:
+    reboot_timeout: 300
+    test_command: date
