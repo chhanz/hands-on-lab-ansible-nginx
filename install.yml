@@ -1,6 +1,6 @@
 ---
 - hosts: servers
-  serial: 1
+  serial: 5
   become: true         ## If it's a user
   roles:
     - { role: install-nginx } 

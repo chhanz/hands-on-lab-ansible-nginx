@@ -4,10 +4,10 @@
 </head>
 <body>
 <h1>Hands-on-Lab: Nginx nodes</h1>
-#Create by Template at {{ ansible_date_time.iso8601 }}
+<h3>Create by Template at {{ ansible_date_time.iso8601 }}</h3>
 
 {% for host in groups['all'] %}
-HOST {{ hostvars[host]['ansible_facts']['hostname'] }} IPADDR : {{ hostvars[host]['ansible_facts']['default_ipv4']['address'] }}
+<p>HOST : {{ hostvars[inventory_hostname]['inventory_hostname_short'] }}</p>
 {% endfor %}
 
 </body>

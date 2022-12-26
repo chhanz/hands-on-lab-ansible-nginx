@@ -1,6 +1,6 @@
 ---
 - name: install epel-release for amzl 2
-  ansible.builtin.command: "amazon-linux-extras install epel"
+  ansible.builtin.command: "amazon-linux-extras install epel -y"
 
 - name: install nginx
   ansible.builtin.package:

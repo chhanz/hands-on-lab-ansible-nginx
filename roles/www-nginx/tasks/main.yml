@@ -12,6 +12,8 @@
     backup: yes
 
 - name: Reboot instance
+  throttle: 2
   ansible.builtin.reboot:
     reboot_timeout: 300
     test_command: date
+
